@@ -1,0 +1,23 @@
+.performanRaadar{
+border-radius: 10px;
+display: flex;
+align-items: center;
+background-color:#282D30;
+
+margin-left: 20px;
+margin-right: 12px;
+
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+    .performanRaadar{
+ height: 220px;
+        
+        }
+        
+
+
+}
+
+

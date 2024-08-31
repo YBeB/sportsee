@@ -1,0 +1,17 @@
+
+.chart-section{
+    height: 295x;
+           margin-top: 0px;}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+    .chart-section{
+ height: 220px;
+        margin-bottom: 0px;
+        }
+        
+
+
+}
+
+

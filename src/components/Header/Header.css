@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    background-color: #020203;
+    padding: 15px;
+
+}
+.header-ul{display: flex;
+justify-content: space-around;
+list-style-type: none;
+
+}
+
+li{display: flex;
+
+justify-content: space-around;}
+@media (min-width: 1024px) and (max-width: 1366px) {
+    header {
+
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        background-color: #020203;
+        padding: 0px;
+    
+    }
+
+
+.logo{width: 129px;}
+}

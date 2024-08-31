@@ -1,0 +1,18 @@
+.Score{
+    position:absolute;
+font-size: 15px;
+font-weight: 500;
+line-height: 1px;
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+        .heigh-pie{
+padding: 0px;
+margin: 0px;
+line-height: 0px;
+
+        }
+
+
+}
+
