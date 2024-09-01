@@ -8,7 +8,19 @@ const ObjectivePieChart = ({ score }) => {
     ];
 
     const COLORS = ['#E60000', 'transparent'];
-
+    function renderCustomLabel  (){return (
+        <text
+            x="50%"
+            y="50%"
+            fill="#000"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            style={{ fontSize: '24px', fontWeight: 'bold' }}
+        >
+            <tspan x="50%" dy="0">{`${(score * 100).toFixed(0)}%`}</tspan>
+            <tspan x="50%" dy="1.2em" fill="#74798c" style={{ fontSize: '16px' }}>de votre Objectif</tspan>
+        </text>
+)};
     return (
 <div className='heigh-pie'>
     <ResponsiveContainer>
@@ -30,11 +42,8 @@ const ObjectivePieChart = ({ score }) => {
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
                 <Label
-                    value={`${(score * 100).toFixed(0)}% `}
-                    position="center"
-                    fill="#000"
-                    style={{ fontSize: '24px', fontWeight: 'bold' }}
-           
+             content={renderCustomLabel}
+             position={'center'}
                 />
 
             </Pie>

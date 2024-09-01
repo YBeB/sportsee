@@ -2,25 +2,26 @@
 
 font-size: 15px;
 font-weight: 500;
-line-height: 1px;
+margin-left: 15px;
 }
 
 .heigh-pie{
     width: 250px;
-    height: 230px;
+    height: 248px;
         background-color: #fbfbfb;
         border-radius: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 6px;
+        margin-top: 10px;
+        
                 }
         
 @media (min-width: 1024px) and (max-width: 1366px) {
 
         .heigh-pie{
 padding: 0px;
-margin: 0px;
+margin-top: 10px;
 line-height: 0px;
 
         }
