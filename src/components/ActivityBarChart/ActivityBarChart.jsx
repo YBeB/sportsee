@@ -1,6 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
-
+import './ActivityBarChart.css'
 
 function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {

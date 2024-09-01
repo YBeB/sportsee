@@ -38,17 +38,19 @@ display: flex;
 
     .flex-perf{
         width: 800px;
-height: 122px;
+        height: 122px;
 
     }
     .pe
 
     .hello-text{
-        font-size: 38px;
+        font-size: 35px;
         line-height: 0.2;
+        
     }
     .congratulation-text{
         font-size: 15px;
 
     }
+
 }

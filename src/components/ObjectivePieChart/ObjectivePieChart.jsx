@@ -12,7 +12,7 @@ const ObjectivePieChart = ({ score }) => {
     return (
 <div className='heigh-pie'>
 <p className='Score'> Score</p>
-        <PieChart width={258} height={250}>
+        <PieChart width={248} height={240}>
 
          <Pie
                    data={data}
