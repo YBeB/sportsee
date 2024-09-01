@@ -33,7 +33,7 @@ function ActivityBarChart({ activity }) {
 
     return (
         <div className='activity-flex-bar' style={{ backgroundColor: '#fbfbfb', padding: '1px', borderRadius: '10px' }}>
-            <ResponsiveContainer width="100%" height={320}>
+            <ResponsiveContainer>
                 <p className="activity">Activité quotidienne</p>
                 <BarChart
                     data={numberedSessions}

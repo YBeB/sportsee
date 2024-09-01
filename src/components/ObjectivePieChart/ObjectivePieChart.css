@@ -1,9 +1,21 @@
 .Score{
-    position:absolute;
+
 font-size: 15px;
 font-weight: 500;
 line-height: 1px;
 }
+
+.heigh-pie{
+    width: 250px;
+    height: 230px;
+        background-color: #fbfbfb;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 6px;
+                }
+        
 @media (min-width: 1024px) and (max-width: 1366px) {
 
         .heigh-pie{

@@ -1,16 +1,15 @@
 
 .chart-section{
-    height: 295x;
-           margin-top: 0px;}
+    height: 263px;
+    width: 258px;
+    
+    margin-right: 10px;
+    margin-top: 6px;
+
+}
+
 
 @media (min-width: 1024px) and (max-width: 1366px) {
-
-    .chart-section{
- height: 220px;
-        margin-bottom: 0px;
-        }
-        
-
 
 }
 

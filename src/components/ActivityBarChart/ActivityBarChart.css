@@ -1,0 +1,19 @@
+
+.activity-flex-bar{
+
+    width: 1050px;
+    height: 350px;
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+
+    .activity-flex-bar{
+
+        width: 650px;
+        height: 350px;
+    }
+
+
+}
+

@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, Label } from 'recharts';
+import { PieChart, Pie, Cell, Label, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 import './ObjectivePieChart.css'
 const ObjectivePieChart = ({ score }) => {
@@ -11,6 +11,7 @@ const ObjectivePieChart = ({ score }) => {
 
     return (
 <div className='heigh-pie'>
+    <ResponsiveContainer>
 <p className='Score'> Score</p>
         <PieChart width={248} height={240}>
 
@@ -38,7 +39,7 @@ const ObjectivePieChart = ({ score }) => {
 
             </Pie>
         </PieChart>
-
+        </ResponsiveContainer>
         </div>
     );
 };

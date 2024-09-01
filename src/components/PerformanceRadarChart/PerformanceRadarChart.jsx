@@ -1,5 +1,5 @@
 
-import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
+import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } from 'recharts';
 import './PerformanceRadarChart.css'
 import PropTypes from 'prop-types';
 
@@ -58,11 +58,13 @@ const data = desiredOrder.map(frenchMetric => {
 
     return (
         <div className='performanRaadar'>
-<RadarChart cx={138} cy={130} outerRadius={85} width={278} height={268} data={data}>
+            <ResponsiveContainer>
+<RadarChart cx={131} cy={131} outerRadius={87}  data={data}>
             <PolarGrid gridType='polygon' radialLines={false} stroke='white' />
             <PolarAngleAxis dataKey="subject"   radius={120} tick={{ fill: 'white', fontSize: 12}}  />
             <Radar name="Performance" dataKey="A" stroke="transparent" fill="#FF0101" fillOpacity={0.7} />
         </RadarChart>
+        </ResponsiveContainer>
         </div>
     );
 };

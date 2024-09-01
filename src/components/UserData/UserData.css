@@ -10,7 +10,7 @@ font-weight: 400;
 }
 
 .Stats-body{
-
+    margin-left: 100px;
 margin-bottom: 0px;
 }
 .hello-text{
@@ -20,10 +20,11 @@ font-weight: 500;
 
 }
 .flex-perf{
+    
     width: 1300px;
     display: flex;
 padding-left: 10px;
-margin-left: 10px;
+
 
 }
 .performance{display: flex;
@@ -36,13 +37,14 @@ display: flex;
 }
 @media (min-width: 1024px) and (max-width: 1366px) {
 
-    .flex-perf{
-        width: 800px;
-        height: 122px;
+   .flex-perf{
+width: 800px;
 
-    }
-    .pe
-
+   }
+   .Stats-body{
+    margin-left: 0px;
+margin-bottom: 0px;
+}
     .hello-text{
         font-size: 35px;
         line-height: 0.2;

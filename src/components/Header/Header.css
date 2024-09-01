@@ -6,11 +6,11 @@ header {
     font-weight: 500;
     color: white;
     background-color: #020203;
-    padding: 15px;
+    padding: 11px;
 
 }
 .header-ul{display: flex;
-justify-content: space-around;
+
 list-style-type: none;
 
 }

@@ -3,17 +3,17 @@ border-radius: 10px;
 display: flex;
 align-items: center;
 background-color:#282D30;
-
-margin-left: 20px;
-margin-right: 12px;
-
+height: 265px;
+width: 258px;
+margin-right: 10px;
+margin-top: 6px;
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
 
     .performanRaadar{
- height: 220px;
-        
+        height: 265px;
+    
         }
         
 

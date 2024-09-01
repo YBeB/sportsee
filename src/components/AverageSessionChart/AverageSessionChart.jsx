@@ -26,24 +26,32 @@ CustomTooltip.propTypes = {
 
 function AverageSessionsChart  ({ sessions })  {
     return (
-        <div className="chart-section" style={{ backgroundColor: '#ff0101', padding: '0px', borderRadius: '5px' }}>
-            <h2 style={{ color: '#fff', marginBottom: '5px' }}>Durée moyenne des sessions</h2>
-            <ResponsiveContainer width='100%' height={140}>
-                <LineChart data={sessions}>
-                    <XAxis dataKey="day" stroke="#fff" />
-                    <YAxis hide={true} />
-                    <Tooltip content={<CustomTooltip />} />
-                    <Line
-                        type="monotone"
-                        dataKey="sessionLength"
-                        stroke="#fff"
-                        strokeWidth={3}
-                        dot={false}
-                        activeDot={{ r: 8, strokeWidth: 0 }}
-                    />
-                </LineChart>
-            </ResponsiveContainer>
-        </div>
+        <div className="chart-section" style={{ backgroundColor: '#ff0101', borderRadius: '5px' }}>
+        <h2 style={{ color: '#fff' }}>Durée moyenne des sessions</h2>
+        <ResponsiveContainer width="100%" height="60%">
+            <LineChart 
+                data={sessions} 
+                margin={{ top: 56, right: 0, left: 0, bottom: 9 }} // Augmenter la marge en bas pour remonter l'axe X
+            >
+                <XAxis 
+                    dataKey="day" 
+                    stroke="#fff" 
+
+       
+                />
+                <YAxis hide={true} />
+                <Tooltip content={<CustomTooltip />} />
+                <Line
+                    type="monotone"
+                    dataKey="sessionLength"
+                    stroke="#fff"
+                    strokeWidth={3}
+                    dot={false}
+                    activeDot={{ r: 8, strokeWidth: 0 }}
+                />
+            </LineChart>
+        </ResponsiveContainer>
+    </div>
     );
 };
 

@@ -10,7 +10,9 @@ import Header from "../Header/Header";
 import "./UserData.css";
 
 import Aside from "../Aside/Aside";
-const UserData = ({ userId }) => {
+
+
+function UserData ({ userId })  {
   const [userData, setUserData] = useState(null);
   const [userActivity, setUserActivity] = useState(null);
   const [userPerformance, setUserPerformance] = useState(null);
