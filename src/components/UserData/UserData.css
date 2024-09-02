@@ -30,7 +30,12 @@ padding-left: 10px;
 .performance{display: flex;
 
 }
-
+.error-message{
+font-size: 35px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 .Lower-Body{
 display: flex;
 

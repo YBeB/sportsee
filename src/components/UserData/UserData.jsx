@@ -40,7 +40,7 @@ function UserData ({ userId })  {
   }
 
   if (!userData || !userActivity || !userPerformance || !userAverageSessions) {
-    return <div>Loading...</div>;
+    return <div >Loading...</div>;
   }
 
   return (
