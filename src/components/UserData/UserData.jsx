@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import PropTypes from "prop-types";
 import ObjectivePieChart from "../ObjectivePieChart/ObjectivePieChart";
 import PerformanceRadarChart from "../PerformanceRadarChart/PerformanceRadarChart";
@@ -8,7 +7,7 @@ import NutritionInfo from "../NutritionInfo/NutritionInfo";
 import AverageSessionsChart from "../AverageSessionChart/AverageSessionChart";
 import Header from "../Header/Header";
 import "./UserData.css";
-
+import { fetchUserData, fetchUserActivity, fetchUserPerformance, fetchUserAverageSessions } from "../service/apiService";
 import Aside from "../Aside/Aside";
 
 
@@ -17,53 +16,28 @@ function UserData ({ userId })  {
   const [userActivity, setUserActivity] = useState(null);
   const [userPerformance, setUserPerformance] = useState(null);
   const [userAverageSessions, setUserAverageSessions] = useState(null);
+  const [error, setError] = useState(null);
 
   const getDayLetter = (dayNumber) => {
     const days = ["L", "M", "M", "J", "V", "S", "D"];
     return days[dayNumber - 1];
   };
+
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/user/${userId}`)
-      .then((response) => setUserData(response.data.data))
-      .catch((error) => console.error("Erreur avec  user data:", error));
-
-    axios
-      .get(`http://localhost:3000/user/${userId}/activity`)
-      .then((response) => setUserActivity(response.data.data))
-      .catch((error) => console.error("Erreur avec  user activity:", error));
-
-    axios
-      .get(`http://localhost:3000/user/${userId}/performance`)
-      .then((response) => setUserPerformance(response.data.data))
-      .catch((error) => console.error("Erreur avec  user performance:", error));
-    axios
-      .get(`http://localhost:3000/user/${userId}/average-sessions`)
-      .then((response) => {
-        console.log("API response for average sessions:", response.data);
-        if (
-          response.data &&
-          response.data.data &&
-          response.data.data.sessions
-        ) {
-          const formattedSessions = response.data.data.sessions.map(
-            (session) => ({
-              day: getDayLetter(session.day),
-              sessionLength: session.sessionLength,
-            })
-          );
-          setUserAverageSessions(formattedSessions);
-        } else {
-          console.error(
-            "Données des sessions moyennes manquantes dans la réponse de l'API"
-          );
-          setUserAverageSessions([]);
-        }
-      })
-      .catch((error) =>
-        console.error("Erreur avec user average sessions:", error)
-      );
+    Promise.all([
+      fetchUserData(userId).then(setUserData),
+      fetchUserActivity(userId).then(setUserActivity),
+      fetchUserPerformance(userId).then(setUserPerformance),
+      fetchUserAverageSessions(userId, getDayLetter).then(setUserAverageSessions)
+    ])
+    .catch(error => {
+      setError("Nous n'avons pas pu trouver les informations pour cet utilisateur. Veuillez vérifier l'ID et réessayer.");
+    });
   }, [userId]);
+
+  if (error) {
+    return <div className="error-message">{error}</div>;
+  }
 
   if (!userData || !userActivity || !userPerformance || !userAverageSessions) {
     return <div>Loading...</div>;
